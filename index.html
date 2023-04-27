@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> 김수현 - 고양이잡지 </title>
+    <style>
+        * {margin: 0; padding: 0;}
+        body {background-color: #d0e1cb;}
+        ul,li {margin: 0; padding: 0; list-style: none;}
+        .cat {position: absolute; left: 50%; top: 50%;
+        transform: translate(-50%,-50%);}
+        .cat .slide {width: 800px; height: 400px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        
+        }
+        .cat .slide ul li a img {width: 800px;}
+
+        /* btn */
+        .cat .text {text-align: center; margin-top: 50px; }
+        .cat .text a {background-color: #000; 
+            padding: 12px 30px; /* 상하, 좌우 */
+            margin: 12px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: #fff;
+        }
+        .cat .text a:hover {background-color: #ffa375;
+            padding: 12px 30px; /* 상하, 좌우 */
+            margin: 12px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: #000;
+            transition: 0.3s;
+        }
+    </style>
+    <script src="./script/jquery-1.12.4.min.js"></script>
+    <script src="./script/jquery.innerfade.js"></script>
+    <script>
+        $(function(){
+            $(".inner-fade").innerfade({
+                animationtype:"fade",
+                timeout:3000
+            })
+        });
+    </script>
+    <!-- 데이터베이스와 연동할 때 ./를 넣어야 로컬로 잡힘 (무슨 뜻일까?) -->
+</head>
+<body>
+    <!-- .cat>.slide+.text -->
+    <div class="cat">
+        <div class="slide">
+            <!-- ul.inner-fade>li*4>a>img -->
+            <ul class="inner-fade">
+                <li><a href="./images/cat.pdf"><img src="./images/1.svg" alt="고양이매거진1p"></a></li>
+                <li><a href="./images/cat.pdf"><img src="./images/2.svg" alt="고양이매거진2p"></a></li>
+                <li><a href="./images/cat.pdf"><img src="./images/3.svg" alt="고양이매거진3p"></a></li>
+                <li><a href="./images/cat.pdf"><img src="./images/4.svg" alt="고양이매거진4p"></a></li>
+            </ul>
+        </div>
+        <div class="text">
+            <!-- a{미리보기} -->
+            <a href="./images/cat.pdf">미리보기</a>
+            <a href="./images/catMagazine.zip">다운받기</a>
+            <!-- 확장자가 zip인 링크를 누르면 다운받아짐 -->
+        </div>
+    </div>
+</body>
+</html>
